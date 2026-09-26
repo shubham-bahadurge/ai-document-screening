@@ -3,51 +3,165 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AI Document Screening</title>
+    <title>IDShield AI | Document Screening</title>
 
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='style.css') }}"
-    >
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="app">
 
-        <h1>🛡️ AI Document Screening System</h1>
+        <!-- Sidebar -->
+        <aside class="sidebar">
 
-        <p>
-            Upload a document for automated screening
-            and risk analysis.
-        </p>
+            <div class="logo">
+                🛡️ <span>IDShield AI</span>
+            </div>
 
-        <div class="card">
+            <nav>
+                <a class="active">📊 Dashboard</a>
+                <a>🔍 New Screening</a>
+                <a>📁 Screening History</a>
+                <a>📈 Analytics</a>
+                <a>📄 Reports</a>
+            </nav>
 
-            <h2>Document Screening</h2>
+            <div class="sidebar-bottom">
+                <span>AI Document Risk Platform</span>
+                <small>Prototype v1.0</small>
+            </div>
 
-            <input
-                type="file"
-                id="document"
-                accept="image/*"
-            >
+        </aside>
 
-            <button onclick="screenDocument()">
-                🔍 Screen Document
-            </button>
 
-        </div>
+        <!-- Main -->
+        <main class="main">
 
-        <div id="result"></div>
+            <header class="topbar">
+
+                <div>
+                    <h1>Document Screening</h1>
+                    <p>AI-powered document risk analysis</p>
+                </div>
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    System Online
+                </div>
+
+            </header>
+
+
+            <!-- Statistics -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <span>📄</span>
+                    <div>
+                        <small>Total Screenings</small>
+                        <h2>0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span>🟢</span>
+                    <div>
+                        <small>Low Risk</small>
+                        <h2>0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span>🟠</span>
+                    <div>
+                        <small>Medium Risk</small>
+                        <h2>0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span>🔴</span>
+                    <div>
+                        <small>High Risk</small>
+                        <h2>0</h2>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Upload -->
+            <section class="upload-card">
+
+                <div class="section-title">
+                    <div>
+                        <h2>🔍 New Document Screening</h2>
+                        <p>Upload an identity document for automated analysis.</p>
+                    </div>
+                </div>
+
+
+                <div class="upload-area">
+
+                    <div class="upload-icon">
+                        📄
+                    </div>
+
+                    <h3>Upload Document</h3>
+
+                    <p>
+                        Select an image of the document
+                    </p>
+
+                    <input
+                        type="file"
+                        id="document"
+                        accept="image/*"
+                    >
+
+                    <label for="document" class="upload-button">
+                        Choose Document
+                    </label>
+
+                    <p class="file-name" id="fileName">
+                        No file selected
+                    </p>
+
+                    <button
+                        class="screen-button"
+                        onclick="screenDocument()"
+                    >
+                        🔍 Start AI Screening
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Results -->
+            <section id="result"></section>
+
+
+            <footer>
+                <p>
+                    IDShield AI • Automated screening prototype •
+                    Results require human/authoritative verification
+                </p>
+            </footer>
+
+        </main>
 
     </div>
 
+
     <script
-        src="{{ url_for('static', filename='script.js') }}"
-    ></script>
+        src="{{ url_for('static', filename='script.js') }}">
+    </script>
 
 </body>
 
